@@ -6,7 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Paperclip.options[:command_path] = "C:\Windows\System32\convert.exe"
 
 module Przepisy
   class Application < Rails::Application
