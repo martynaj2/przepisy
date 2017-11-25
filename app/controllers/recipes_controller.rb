@@ -44,9 +44,10 @@ before_action :find_recipe, only: [:show, :edit, :update, :destroy]
 
 
 	private
+	
 	def recipe_params
-		params.require(:recipe).permit(:title, :description, :image)
-	end	
+		params.require(:recipe).permit(:title, :description, :image, ingredients_attributes: [:id, :name, :_destroy], directions_attributes: [:id, :step, :_destroy])
+	end
 
 	def find_recipe
 		@recipe= Recipe.find(params[:id])
